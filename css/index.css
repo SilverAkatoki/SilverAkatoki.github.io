@@ -1,0 +1,30 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: "SourceHanSerif-Bold";
+    src: url("../assets/font/SourceHanSerifCN-Bold.ttf");
+    font-weight: bold;
+}
+
+* {
+    user-select: none;
+}
+
+h1 {
+    padding: 0;
+    margin: 0;
+    font-family: "SourceHanSerif-Bold";
+    size: 32px;
+    font-weight: bold;
+}
+
+span.black {
+    padding-left: 2.5px;
+    padding-right: 2.5px;
+    background-color: black;
+    color: black;
+}
+
+span.black:hover {
+    color: white;
+}
