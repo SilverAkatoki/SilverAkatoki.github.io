@@ -1,1 +1,0 @@
-# SilverAkatoki.github.io
