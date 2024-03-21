@@ -1,0 +1,42 @@
+:root {
+    --hyperlink_animation: left;
+    --hyperlink_width: 2px;
+    --hyperlink_animation_time: .3s;
+}
+
+[tip] {
+    position: relative;
+}
+
+a {
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+
+}
+
+a:hover::after {
+    content: attr(tip);
+    position: absolute;
+    left: 61.8%;
+    top: 30px;
+    min-width: attr(tip);
+    border: 1px #aaaaaa solid;
+    background-color: white;
+    padding: 5px;
+    color: black;
+    font-size: 14px;
+    z-index: 1;
+}
+
+span {
+    padding-bottom: var(--hyperlink_width);
+    background: linear-gradient(to right, white, white) var(--hyperlink_animation) bottom;
+    background-repeat: no-repeat;
+    background-size: 0 var(--hyperlink_width);
+    transition: var(--hyperlink_animation_time);
+}
+
+span:hover {
+    background-size: 100% 2px;
+}

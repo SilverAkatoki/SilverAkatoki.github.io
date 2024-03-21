@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>ArKnightsWebDesign</title>
+
+</head>
+
+<body style="margin: 0; padding: 0; overflow: hidden;">
+    <div style="position: relative; height: 300vh; top: 0; left:0; right: 0; bottom: 0; background-color: #1F1F1F;"
+        class="container">
+        <div class="nav_menu_container">
+            <div class="nav_button_container can_clickeditem">
+                <span class="nav_button_name">Buttons</span>
+                <button class="nav_button">按钮</button>
+            </div>
+
+            <div class="nav_button_container can_clickeditem">
+                <span class="nav_button_name">ParallaxImg</span>
+                <button class="nav_button">图片</buttonb>
+            </div>
+
+            <div class="nav_button_container can_clickeditem">
+                <span class="nav_button_name">Text</span>
+                <button class="nav_button">测试</buttonb>
+            </div>
+        </div>
+
+
+        <div id="Buttons">
+            <div style="position: absolute; top:50vh; left: 50%; transform: translate(-50%,-50%);">
+                <button class="default_button can_clickeditem">这是一个按钮</button>
+                <p></p>
+                <div>
+                    <button class="default_button can_clickeditem">这是一个嵌套的按钮</button>
+                </div>
+                <p></p>
+                <div>
+                    <div>
+                        <button class="default_button can_clickeditem">这是一个嵌套更深的按钮</button>
+                    </div>
+                </div>
+                <p style="position: relative; transform: translate(-20%,-50%); margin-top: 1em;" class="can_chooseitem">「嵌套」即为多层div标签</p>
+            </div>
+        </div>
+
+        <div id="ParallaxImg">
+            <div style="position: absolute; top:50vh; left: 50%; transform: translate(-50%,-50%); width: 500px;">
+                <p style="position: relative; transform: translate(-10%); margin-top: 1em;">这里本来想写一个视差图片, 但是技术力不够(叹)</p>
+            </div>
+        </div>
+
+        <div id="Text">
+            <div style="position: relative; top:50vh; left: 50%; transform: translate(-50%,-50%);">
+                <h1>标题示例</h1>
+                <hr>
+                <p class="can_chooseitem">这里选择会改变鼠标指针. 可以由一个class修改</p>
+                <span><a href="https://www.bilibili.com/" tip="🐭" class="can_clickeditem">超链接示例</a></span>
+            </div>
+        </div>
+    </div>
+
+    <script src=" js/index.js"></script>
+    <script src="js/NavMenu.js"></script>
+
+    <div class="outer_cursor"></div>
+    <div class="cursor"></div>
+    <div class="clicked_cursor"></div>
+
+    <script src="js/Mouse.js"></script>
+</body>
+
+</html>
