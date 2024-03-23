@@ -63,6 +63,21 @@ window.addEventListener("load", () => {
         }, MOUSEWHEEL_STATUS_UPDATE_DELAY);
     }, { passive: false });
 
+    window.addEventListener("touchmove", (ev) => {
+        ev.preventDefault(); // 阻止默认滚动操作
+
+        if (ev.deltaY > 0) {
+            wheel_moving_status = 1;
+        } else {
+            wheel_moving_status = -1;
+        }
+
+        // 重置滚动状态
+        setTimeout(() => {
+            wheel_moving_status = 0;
+        }, MOUSEWHEEL_STATUS_UPDATE_DELAY);
+    }, { passive: false });
+
     // 鼠标更新焦点事件
     setInterval(() => {
         if (can_jump) {

@@ -1,5 +1,25 @@
 @charset "utf-8";
 
+@media screen and (min-width: 500px) {
+    .nav_menu_container {
+        display: none;
+    }
+}
+
+/* PC端要做的 */
+@media screen and (min-width: 500px) {
+    .nav_menu_container {
+        display: block;
+    }
+}
+
+/* 移动端要做的 */
+@media screen and (max-width: 500px) {
+    .nav_menu_container {
+        display: none;
+    }
+}
+
 .nav_menu_container {
     position: fixed;
     top: 50%;
