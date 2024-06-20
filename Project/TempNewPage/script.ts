@@ -28,7 +28,7 @@ window.addEventListener("resize", () => {
 let curDate: Date = new Date();
 
 /**上一次更新时间*/
-let lastUpdateDate: Date = new Date("2024-06-20");
+let last_update_date: Date = new Date("2024-06-20");
 
 /**将 `Date` 类型变为 `"YYYY.MM.DD"` 型的字符串 */
 let formatDate = (dateObj: Date): string => {
