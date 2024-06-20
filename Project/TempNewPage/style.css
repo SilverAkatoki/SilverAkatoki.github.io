@@ -119,8 +119,8 @@ html body {
     margin: 2px;
 }
 
-#least_update_date,
-#least_update_date_distance {
+#last_update_date,
+#last_update_date_distance {
     font-weight: bold;
 }
 
