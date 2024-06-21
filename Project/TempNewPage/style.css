@@ -14,6 +14,8 @@ html body {
 }
 
 #body_container {
+    margin-left: 31.4vh;
+    margin-right: 31.4vh;
     min-height: 100%;
 }
 
@@ -35,6 +37,24 @@ html body {
 #head_container>a:hover {
     text-decoration: underline;
     text-decoration-thickness: 2px;
+}
+
+/* ---------------------------------- 访问统计 ---------------------------------- */
+
+#site_viewer_counter_container {
+    padding-left: 3em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#site_viewer_counter_container>p {
+    color: #898989;
+}
+
+#busuanzi_value_site_uv,
+#busuanzi_value_site_pv {
+    font-weight: 600;
 }
 
 /* ----------------------------------- 导航栏 ---------------------------------- */
@@ -143,3 +163,9 @@ footer>p {
 }
 
 /* -------------------------------------------------------------------------- */
+
+#statement_container {
+    background-color: #FAFAFA;
+    border: 2px solid #C0C0C0;
+    border-radius: 5px;
+}

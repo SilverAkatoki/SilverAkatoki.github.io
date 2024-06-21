@@ -1,34 +1,42 @@
-var bodyContainer = document.getElementById("body_container");
-var titleContainer = document.getElementById("title_container");
-var headContainer = document.getElementById("head_container");
-var navigationBar = document.getElementById("navigation_bar");
-var lastUpdateDateLabel = document.getElementById("last_update_date");
-var lastUpdateDateDistanceLabel = document.getElementById("last_update_date_distance");
-/**设置 / 修改底栏位置*/
-var fixFooterPosition = function () {
-    bodyContainer.style.minHeight = "".concat(window.innerHeight
+"use strict";
+const lastUpdateDateStr = "2024-06-20";
+const titleSentences = [
+    "占位符",
+    "null",
+    "nullptr",
+    "None",
+    "undefine",
+    "这里要写几句随机展示的话"
+];
+let bodyContainer = document.getElementById("body_container");
+let titleContainer = document.getElementById("title_container");
+let headContainer = document.getElementById("head_container");
+let navigationBar = document.getElementById("navigation_bar");
+let lastUpdateDateLabel = document.getElementById("last_update_date");
+let lastUpdateDateDistanceLabel = document.getElementById("last_update_date_distance");
+let sentenceLabel = document.getElementById("sentence");
+let fixFooterPosition = function () {
+    bodyContainer.style.minHeight = `${window.innerHeight
         - titleContainer.offsetHeight
         - headContainer.offsetHeight
-        - navigationBar.offsetHeight, "px");
+        - navigationBar.offsetHeight}px`;
 };
 fixFooterPosition();
-window.addEventListener("resize", function () {
-    // 页面大小调整时执行
+window.addEventListener("resize", () => {
     fixFooterPosition();
 });
-/* ---------------------------------- 日期处理 ---------------------------------- */
-/**当前时间*/
-var curDate = new Date();
-/**上一次更新时间*/
-var lastUpdateDate = new Date("2024-06-20");
-/**将 `Date` 类型变为 `"YYYY.MM.DD"` 型的字符串 */
-var formatDate = function (dateObj) {
-    return "".concat(dateObj.getFullYear(), ".").concat(dateObj.getMonth() + 1, ".").concat(dateObj.getDate());
+let curDate = new Date();
+let lastUpdateDate = new Date(lastUpdateDateStr);
+let formatDate = (dateObj) => {
+    return `${dateObj.getFullYear()}.${dateObj.getMonth() + 1}.${dateObj.getDate()}`;
 };
-/**计算更新天数间隔 */
-var calcDayDistance = function (cur_date, last_update_date) {
-    var millisecondDistance = Math.abs(cur_date.getTime() - last_update_date.getTime());
-    return Math.ceil(millisecondDistance / (1000 * 3600 * 24)).toString();
+let calcDayDistance = (cur_date, last_update_date) => {
+    const millisecondDistance = Math.abs(cur_date.getTime() - last_update_date.getTime());
+    return Math.floor(millisecondDistance / (1000 * 3600 * 24)).toString();
+};
+let randomInt = (low, high) => {
+    return Math.floor(Math.random() * high) + low;
 };
 lastUpdateDateLabel.innerHTML = formatDate(lastUpdateDate);
 lastUpdateDateDistanceLabel.innerHTML = calcDayDistance(curDate, lastUpdateDate);
+sentenceLabel.innerHTML = titleSentences[randomInt(0, titleSentences.length)];
